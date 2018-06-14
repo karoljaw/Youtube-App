@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .rectangle {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
+        .circle {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            /* left: 50%;
+            top: 50%; */
+            transform: translate(50%, 50%);
+            transform-origin: 100%, 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="rectangle">
+        <div class="circle">
+
+        </div>
+    </div>
+    <script>
+        // document.addEventListener("DOMContentLoaded", start)
+   
+    // function start() {
+        document.addEventListener("mousemove", track);
+        const circle = document.querySelector(".circle");
+        function track(e) {
+            console.log(`X:${e.pageX}, Y:${e.pageY}`);
+            circle.style.transform = `translate(${e.clientX}%, ${e.clientY}%)`
+        }
+        
+    // }
+
+    </script>
+</body>
+</html>
